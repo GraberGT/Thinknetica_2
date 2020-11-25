@@ -4,7 +4,7 @@ belongs_to :author, class_name: "User", optional: true
 has_many :questions
 has_many :test_histories
 has_and_belongs_to_many :users
-
+#teststets
 
   def self.titles(category)
     joins(:category)
