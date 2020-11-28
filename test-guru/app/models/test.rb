@@ -6,7 +6,7 @@ has_and_belongs_to_many :users
 #teststets
 
   def self.titles(category)
-    joins(:category)
+    joins("JOIN categories ON tests.category_id = categories.id")
       .where(categories: { category: category })
       .order(title: :desc)
       .pluck(:title)
