@@ -22,9 +22,9 @@ categories = Category.create(
 
 tests = Test.create(
   [
-    { title: "Test_1", level: 0, category_id: categories[0].id },
-    { title: "Test_2", level: 1, category_id: categories[1].id },
-    { title: "Test_3", level: 2, category_id: categories[2].id }
+    { title: "Test_1", level: 0, category_id: categories[0].id, author: users[0] },
+    { title: "Test_2", level: 1, category_id: categories[1].id , author: users[0]},
+    { title: "Test_3", level: 2, category_id: categories[2].id , author: users[0]}
   ]
 )
 
