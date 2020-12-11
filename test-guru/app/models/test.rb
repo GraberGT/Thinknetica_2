@@ -11,12 +11,9 @@ validates :level, numericality: { greater_than_or_equal_to: 0}
 scope :easy, -> { where(level: 0..1) }
 scope :medium, -> { where(level: 2..4) }
 scope :hard, -> { where(level: 5..Float::INFINITY) }
+scope :by_category, -> (category) { joins(:category).where(categories: { title: category }) }
 
-scope :by_level, -> (level) { where(level: level) }
-
-scope :titles_by_category, -> (category) {
-select(:title).joins(:category).where(categories: {title: category})
-  .order(title: :desc)
-}
-
+  def self.titles_by_category(category)
+    Test.by_category(category).order(title: :desc).pluck(:title)
+  end
 end
