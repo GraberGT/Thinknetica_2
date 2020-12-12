@@ -30,7 +30,6 @@ tests = Test.create(
 
 questions = []
   5.times { |n| questions << Question.create(title: "Question_body_#{i}-#{n}", test_id: test.id) }
-end
 
 questions.each.with_index(1) do |question, i|
   5.times { |n| Answer.create(title:"Answer_#{i}-#{n}", question_id: question.id, correct: (n == 1)) }
@@ -46,8 +45,8 @@ users = User.create(
 
 answers = Answer.create(
   [
-    {title: 'correct' question: questions[0], correct: true},
-    {title: 'incorrect' question: questions[0], correct: false} 
+    {title: 'correct', question: questions[0], correct: true},
+    {title: 'incorrect', question: questions[0], correct: false} 
   ]
 )
 
