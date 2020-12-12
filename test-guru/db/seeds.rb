@@ -14,9 +14,9 @@ User.destroy_all
 
 categories = Category.create(
   [
-    { category: 'Front' },
-    { category: 'Back' },
-    { category: 'DB' } 
+    { title: 'Front' },
+    { title: 'Back' },
+    { title: 'DB' } 
   ]
 )
 
