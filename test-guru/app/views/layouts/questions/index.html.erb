@@ -1,0 +1,20 @@
+<h1>Listing Questions</h1>
+
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>Body</th>
+    <th>Created date</th>
+  </tr>
+
+  <% @questions.each do |question| %>
+    <tr>
+      <td><%= question.id %></td>
+      <td><%= question.body %></td>
+      <td><%= question.created_at %></td>
+      <td><%= link_to 'Destroy', question_path(question), 
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
