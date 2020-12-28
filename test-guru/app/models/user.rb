@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_and_belongs_to_many :tests
+  has_and_belongs_to_many :tests, through: :test_histories
+  has_many :test_histories, dependent: :destroy
   has_many :created_tests, class_name: "Test", foreign_key: "author_id",
   dependent: :nullify
 

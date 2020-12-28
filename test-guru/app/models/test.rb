@@ -1,8 +1,9 @@
 class Test < ApplicationRecord
 belongs_to :category
 belongs_to :author, class_name: "User", optional: true
-has_many :questions
-has_and_belongs_to_many :users
+has_many :questions, dependent: :destroy
+has_many :test_histories, dependent: :destroy
+has_and_belongs_to_many :users, through: :test_histories
 
 validates :title, :level, presence: true
 validates :title, uniqueness: { scope: :level }

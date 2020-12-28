@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:title)
   end
 
   def rescue_with_record_not_found(exception)
