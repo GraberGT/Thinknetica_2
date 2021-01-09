@@ -8,5 +8,6 @@ class CreateTestHistories < ActiveRecord::Migration[6.0]
         t.timestamps
       
     end
+    change_column_default(:test_histories, :passed, from: nil, to: false)
   end
 end
