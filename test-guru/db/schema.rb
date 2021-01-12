@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_185116) do
+ActiveRecord::Schema.define(version: 2020_12_28_190948) do
 
   create_table "answers", force: :cascade do |t|
     t.string "title", null: false
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 2020_12_13_185116) do
     t.integer "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "test_histories", force: :cascade do |t|
+    t.integer "test_id", null: false
+    t.integer "user_id", null: false
+    t.boolean "passed", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_test_histories_on_test_id"
+    t.index ["user_id"], name: "index_test_histories_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -63,6 +73,8 @@ ActiveRecord::Schema.define(version: 2020_12_13_185116) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "test_histories", "tests"
+  add_foreign_key "test_histories", "users"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
   add_foreign_key "tests_users", "tests"

@@ -20,6 +20,14 @@ categories = Category.create(
   ]
 )
 
+users = User.create(
+  [
+    { name: "John", email: "gates@gmail.com" },
+    { name: "Bill", email: "packard@gmail.com" },
+    { name: "Steve", email: "work@gmail.com" }
+  ]
+)
+
 tests = Test.create(
   [
     { title: "Test_1", level: 0, category_id: categories[0].id, author: users[0] },
@@ -28,25 +36,19 @@ tests = Test.create(
   ]
 )
 
-questions = []
-  5.times { |n| questions << Question.create(title: "Question_body_#{i}-#{n}", test_id: test.id) }
 
-questions.each.with_index(1) do |question, i|
-  5.times { |n| Answer.create(title:"Answer_#{i}-#{n}", question_id: question.id, correct: (n == 1)) }
-end
-
-users = User.create(
+questions = Question.create(
   [
-    { first_name: "John", email: "gates@gmail.com" },
-    { first_name: "Bill", email: "packard@gmail.com" },
-    { first_name: "Steve", email: "work@gmail.com" }
+    {title: "Front question 1", test: tests[0]},
+    {title: "Back question 1", test: tests[1]},
+    {title: "DB question 1", test: tests[2]}
   ]
 )
 
 answers = Answer.create(
   [
-    {title: 'correct', question: questions[0], correct: true},
-    {title: 'incorrect', question: questions[0], correct: false} 
+    {title: 'correct', question: questions[0], right_answer: true},
+    {title: 'incorrect', question: questions[0], right_answer: false} 
   ]
 )
 
