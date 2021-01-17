@@ -1,0 +1,9 @@
+<%= form_with(model: resourse, local: true) do |form| %>
+  <%= render 'shared/errors', resourse: @question %>
+
+  <%= render 'fields', resourse: form %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
