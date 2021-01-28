@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
   validates :title, presence: true
   validate :validate_belong_count, on: :create
 
-  scope :right_answers, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   def validate_belong_count
     errors.add(:answers, "too much") if question.answers.count >= 4
