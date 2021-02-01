@@ -1,0 +1,20 @@
+<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+
+<% if @test_passage.is_passed?  %>
+  <p>
+    Test was Completed!
+  </p>
+<% else %>
+  <p>
+    Test not Completed!
+  </p>
+<% end %>
+
+<p>
+  <strong>Result:</strong> <%= @test_passage.correct_questions %> from <%= @test_passage.test.questions.count %>.
+</p>
+<p>
+  <strong>Success rate:</strong> <%= @test_passage.rate %>
+</p>
+
+<%= link_to 'Main', tests_path %>
