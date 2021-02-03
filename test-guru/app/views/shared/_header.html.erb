@@ -1,0 +1,12 @@
+<header>
+  <div class="topnav">
+    <%= link_to 'TestGuru', root_path, class: 'active' %>
+    <% if logged_in? %>
+      <%= link_to 'Log out', logout_path, method: :delete, data: { confirm: 'Are you sure?' }  %>
+      <div class="nav_user">Welcome, <b><%= current_user.email %></b> Guru</div>
+    <% else %>
+      <%= link_to 'Sign up', signup_path %>
+      <%= link_to 'Log in', login_path %>
+    <% end %>
+  </div>
+</header>
