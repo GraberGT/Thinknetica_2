@@ -6,8 +6,7 @@ class User < ApplicationRecord
   dependent: :nullify
 
   validates :name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, 
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, 
     message: 'Is not valid' }
 
   has_secure_password
