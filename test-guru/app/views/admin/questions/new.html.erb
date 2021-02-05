@@ -1,0 +1,4 @@
+<h1><%= question_header(@question), :create %></h1>
+
+<%= render 'form', resource: [:admin, @test, @question] %>
+<%= link_to 'Back', admin_test_path(@test) %>
