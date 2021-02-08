@@ -1,5 +1,5 @@
 class TestsMailer < ApplicationMailer
-  def comleted_test(test_passage)
+  def completed_test(test_passage)
     @user = test_passage.user
     @test = test_passage.test
 
