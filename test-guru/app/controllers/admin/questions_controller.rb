@@ -12,7 +12,7 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
   
   def edit
@@ -56,7 +56,7 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def question_params
-    params.require(:question).permit(:title, :test_id)
+    params.require(:question).permit(:title)
   end
 
   def rescue_with_record_not_found(exception)

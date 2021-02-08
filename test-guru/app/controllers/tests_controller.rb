@@ -1,11 +1,28 @@
 class TestsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_test, only: %i[start]
+  before_action :find_test_passage, only: %i[start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.all
+  end
+
+  def show
+    render :result if @test_passage.completed?
+  end
+
+  def result; end
+
+  def update
+    @test_passage.accept!(params[:answer_ids])
+    if @test_passage.completed?
+      @test_passage.set_result
+      TestsMailer.completed_test(@test_passage).deliver_now
+      redirect_to result_test_passage_path(@test_passage)
+    else
+      render :show
+    end
   end
 
   def start
@@ -15,11 +32,7 @@ class TestsController < ApplicationController
 
   private
 
-  def find_test
-    @test = Test.find(params[:id])
-  end
-
-  def rescue_with_test_not_found(exception)
-    render plain: exception.message
+  def find_test_passage
+    @test_passage ||= TestPassage.find(params[:id])
   end
 end
