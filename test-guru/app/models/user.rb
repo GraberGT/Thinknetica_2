@@ -24,4 +24,12 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
+
+  def admin?
+    if 
+      current_user.is_a?(Admin)
+    else
+      redirect_to root_path, alert: 'You are not authorized to view this page.'
+    end
+  end 
 end

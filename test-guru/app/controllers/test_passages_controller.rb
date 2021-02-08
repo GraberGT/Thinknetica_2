@@ -8,9 +8,11 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    redirect_to root_path unless @test_passage.user_id == current_user.id
-  
-    @rate = @test_passage.rate
+    if @test_passage.user_id == current_user.id
+      @rate = @test_passage.rate
+    else
+      redirect_to root_path
+    end
   end
   
   def update
