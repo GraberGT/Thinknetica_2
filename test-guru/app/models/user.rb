@@ -25,11 +25,11 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
-  def admin?
+  def admin
     if 
-      current_user.is_a?(Admin)
+      @user.is_a?(Admin)
     else
-      redirect_to root_path, alert: 'You are not authorized to view this page.'
+      render :new
     end
   end 
 end
