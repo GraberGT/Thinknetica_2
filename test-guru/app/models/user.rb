@@ -25,11 +25,11 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
-  def admin
-    if 
-      @user.is_a?(Admin)
-    else
-      render :new
-    end
+  def current_user
+    @current_user ||= User.last
+  end
+
+  def admin?
+    current_user.is_a?(Admin)
   end 
 end
