@@ -2,11 +2,11 @@
   <div class="topnav">
     <%= link_to 'TestGuru', root_path, class: 'active' %>
     <% if user_signed_in? %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-      <div class="nav_user">Welcome, <b><%= current_user.email %></b> Guru</div>
+      <%= link_to t('links.logout'), destroy_user_session_path, method: :delete %>
+      <div class="nav_user"><%= t('.welcome', user: current_user.email) %></div>
     <% else %>
-      <%= link_to 'Sign up', new_user_registration_path %>
-      <%= link_to 'Log in', new_user_session_path %>
+      <%= link_to t('links.signup'), new_user_registration_path %>
+      <%= link_to t('links.login'), new_user_session_path %>
     <% end %>
   </div>
 </header>
