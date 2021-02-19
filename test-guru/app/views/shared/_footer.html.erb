@@ -1,9 +1,9 @@
 <div>
   <p>
     <%= current_year %><br>
-    created by <%= link_to '@grabergt', "https://github.com/GraberGT", target: '_blank' %><br>
+    <%= t('.create') %><%= link_to '@grabergt', "https://github.com/GraberGT", target: '_blank' %><br>
     <%= link_to 'Test Guru', "https://github.com/GraberGT/Thinknetica_2/", target: '_blank' %><br>
-    Beautiful solution for online testing<br>
-    <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: '_blank' %>
+    <%= t('.project_description') %><br>
+    <%= link_to t('.online_school'), 'http://thinknetica.com/', target: '_blank' %>
   </p>
 </div>
