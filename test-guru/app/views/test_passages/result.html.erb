@@ -1,0 +1,9 @@
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
+
+<p>
+  <%= t('.correct_questions') %> <%= @test_passage.correct_questions %><br>
+  <%= t('.rate') %> <span id="<%= result(@test_passage.is_passed?)[:style] %>"><%= @rate %>%</span>
+</p>
+<p><%= t("test_passages.result.#{result(@test_passage.is_passed?)[:message]}") %></p>
+
+<%= link_to t('links.main'), tests_path %>

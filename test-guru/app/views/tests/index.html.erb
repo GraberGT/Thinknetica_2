@@ -1,0 +1,13 @@
+<h1><%= t('.header') %></h1>
+
+<table>
+  <tr>
+    <th><%= t('.title') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.category_id') %></th>
+    <th><%= t('.questions_count') %></th>
+    <th><%= t('.actions') %></th>
+  </tr>
+
+  <%= render @tests %>
+</table>
