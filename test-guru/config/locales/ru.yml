@@ -35,7 +35,8 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-    header:
+    nav:
+      brand : "TestGuru"
       welcome: "Добро пожаловать, %{user} Гуру"
     footer:
       created_by: "Создал"

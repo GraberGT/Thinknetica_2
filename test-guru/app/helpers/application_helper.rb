@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ALERTS = { 'alert' => 'alert-warning', 'notice' => 'alert-info', 'error' => 'alert-danger' }
+
   def current_year
     Time.current.year
   end
@@ -7,9 +9,7 @@ module ApplicationHelper
     link_to 'Github', "https://github.com/#{author}/#{repo}"
   end
 
-  def flash_message(type)
-      if flash[type]
-        content_tag :p, flash[type], class: "flash #{type}"
-    end
+  def flash_message(key, message)
+    content_tag :div, message, class: "alert #{ALERTS[key]}", role: "alert"
   end
 end

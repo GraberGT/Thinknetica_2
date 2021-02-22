@@ -33,8 +33,9 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
-    header:
-      welcome: "Welcome %{user} Guru"
+    nav:
+      brand : "TestGuru"
+      welcome: "Welcome, %{user} Guru"
     footer:
       created_by: "Created by"
       project_description: "Beautiful solition for online testing"

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   end
 
   get 'admin/tests', to: "admin/tests#index", as: :admin_root
+  get 'tests', to: "tests#index", as: :user_root
 end
 
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
