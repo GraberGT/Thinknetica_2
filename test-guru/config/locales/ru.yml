@@ -9,6 +9,7 @@ ru:
     logout: "Выход"
     signup: "Регистрация"
     login: "Вход"
+    gist: "Сохранить вопрос в Gist"
   helpers:
     select:
       prompt: "Выберите"
@@ -62,7 +63,10 @@ ru:
     show:
       header: "Вы проходите тест: %{title}."
       question_count: "Вопрос № %{index} из %{total}"
-      submit: "Следующий"  
+      submit: "Следующий" 
+      gist:
+      success: "Gist успешно создан! Ссылка: %{url}"
+      failure: "Во время сохранения gist произошла ошибка" 
   admin:
     base:
       not_auth: "У вас не достаточно прав для просмотра этой страницы."
@@ -80,6 +84,12 @@ ru:
         category_id: "Категория"
         questions_count: "Кол-во вопросов"
         actions: "Действия"
+    gists:
+      index:
+        header: "Вопросы в gist"
+        question: "Вопрос"
+        gist_url: "Ссылка на gist"
+        user: "Пользователь"
   users:
     sessions:
       create: 
@@ -87,3 +97,8 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+  gist_question_service:
+    description: "Вопрос про %{test_title} на TestGuru"
+    success: "Gist успешно создан! Ссылка: %{url}"
+    failure: "Во время сохранения gist произошла ошибка"
+    not_saved: "Не сохранен в БД"

@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, 
-    message: 'Is not valid' }
+    message: I18n.t('is_not_valid') }
 
   def passed_tests_by_level(level)
     tests.where(level: level)
