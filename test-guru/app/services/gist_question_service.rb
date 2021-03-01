@@ -6,21 +6,6 @@ class GistQuestionService
     @client = client || Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
   end
 
-  def call
-    @client.create_gist(gist_params)
-    @client.last_response
-  end
-
-  def save_gist(user)
-    gist = @question.gists.new(gist_url: @client.last_response.data.id, user_id: user.id)
-
-    if gist.save 
-      { notice: I18n.t('gist_question_service.success', url: @client.last_response.data.html_url) }
-    else
-      { alert: I18n.t('gist_question_service.not_saved') }
-    end
-  end
-
   private
 
   def gist_params
@@ -40,5 +25,14 @@ class GistQuestionService
       @question.answers.pluck(:title)
     ].join("\n")
   end
-  
+
+  def new_gist
+    @gist = @question.gists.new(gist_url: @result.data.id, user_id: current_user.id)
+
+    if @gist.save
+      flash[:notice] = t('gist_question_service.success', url: @result.data.html_url)
+    else
+      flash[:alert] = t('gist_question_service.not_saved')
+    end
+  end
 end

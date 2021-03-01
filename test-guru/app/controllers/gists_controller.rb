@@ -22,14 +22,4 @@ class GistsController < ApplicationController
     @question = @test_passage.current_question
     @result = GistQuestionService.new(@question).call
   end
-
-  def save_gist
-    @gist = @question.gists.new(gist_url: @result.data.id, user_id: current_user.id)
-
-    if @gist.save
-      flash[:notice] = t('gist_question_service.success', url: @result.data.html_url)
-    else
-      flash[:alert] = t('gist_question_service.not_saved')
-    end
-  end
 end
