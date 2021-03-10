@@ -26,6 +26,18 @@ class TestPassagesController < ApplicationController
     end
   end
 
+  def gist
+    result = GistQuestionService.new(@test_passage.current_question)
+    result.call
+    if result.success?
+      current_user.gists.create(question_id: @test_passage.current_question.id, url: result.url)
+      redirect_to @test_passage, notice: t('.success', url: result.url)
+    else
+      redirect_to @test_passage, alert: t('.failure')
+    end
+
+  end
+
   private
   
   def find_test_passage
