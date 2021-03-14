@@ -14,6 +14,7 @@
       <%= b.label %>
     </p>
   <% end %>
-  <p><%= link_to t('links.gist'), gist_test_passage_path(@test_passage), method: :post %></p>
+  
+  <p><%= link_to t('links.gist'), gists_path(test_passage_id: @test_passage.id), method: :post %></p>
   <p><%= form.submit t('.submit') %></p>
 <% end %>
