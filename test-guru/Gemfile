@@ -26,9 +26,17 @@ gem 'pry'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'dotenv-rails'
+
 # AUTH
 gem 'devise', '~> 4.0'
 gem 'letter_opener'
+
+# NETWORKING
+gem 'faraday'
+
+# GITHUB API
+gem "octokit", "~> 4.0"
 
 # UI
 gem 'jquery-rails'

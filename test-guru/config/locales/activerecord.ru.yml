@@ -8,3 +8,4 @@ ru:
     errors:
       messages:
         blank: "не может быть пустым"
+        is_not_valid: "не корректный"

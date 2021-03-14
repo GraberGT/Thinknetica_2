@@ -14,8 +14,11 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       get :result
+      post :gists
     end
   end
+
+  resources :gists, only: :create
 
   namespace :admin do
     resources :tests do
@@ -23,6 +26,8 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+
+    resources :gists, shallow: true, only: :index
   end
 
   get 'admin/tests', to: "admin/tests#index", as: :admin_root

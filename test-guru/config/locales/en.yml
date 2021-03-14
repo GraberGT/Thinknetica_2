@@ -9,6 +9,7 @@ en:
     logout: "Log out"
     signup: "Sing up"
     login: "Log in"
+    gist: "Save question to Gist"
   helpers:
     select:
       prompt: "Please select"
@@ -61,6 +62,9 @@ en:
       header: "Passing %{title} Test"
       question_count: "Question № %{index} from %{total}"
       submit: "Next"
+      gist:
+      success: "Gist was successfully created! Link: %{url}"
+      failure: "An error occurred while saving gist"
   admin:
     base:
       not_auth: "You are not authorized to view this page."
@@ -78,6 +82,12 @@ en:
         category_id: "Category"
         questions_count: "Questions count"
         actions: "Actions"
+    gists:
+      index:
+        header: "Questions at gist"
+        question: "Question"
+        gist_url: "Link to gist"
+        user: "User"
   users:
     sessions:
       create: 
@@ -85,3 +95,8 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+  gist_question_service:
+    description: "A question about %{test_title} from TestGuru"
+    success: "Gist was successfully created! Link: %{url}"
+    failure: "An error occurred while saving gist"
+    not_saved: "Didn't save to DB"
