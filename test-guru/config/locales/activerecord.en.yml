@@ -8,3 +8,4 @@ ru:
     errors:
       messages:
         blank: "can't be blank"
+        is_not_valid: "is not valid"
