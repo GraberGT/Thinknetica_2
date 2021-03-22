@@ -13,7 +13,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
 //= require_tree .
+require("../utilities/sorting")
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require("../utilities/passwordCheck")
