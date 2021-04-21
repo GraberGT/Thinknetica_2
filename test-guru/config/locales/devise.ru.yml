@@ -53,7 +53,8 @@ ru:
         other: "Минимум %{count} символа"
       new:
         header: "Стать Гуру"
-        submit: "Регистрация"
+        password_length: "Минимум %{min_chars} символов."
+        button: "Регистрация"
       edit:
         header: "Изменить учетную запись"
         update: "Обновить"
