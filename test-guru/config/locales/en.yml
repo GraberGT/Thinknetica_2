@@ -34,6 +34,13 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+      feedbacks:
+        new:
+          header: "Send feedback"
+          message: "Message"
+        create:
+          success: "feedback was successfully saved!"
+          failure: "An error occured while saving your feedback!"
     nav:
       brand : "TestGuru"
       welcome: "Welcome, %{user} Guru"
@@ -50,7 +57,8 @@ en:
       questions_count: "Questions count"
       actions: "Actions"
     test:
-      start: "Start"
+      start:
+      empty: "Test does not have any questions."
   test_passages:
     result:
       header: "The %{title} Test was Completed!"
@@ -62,6 +70,8 @@ en:
       header: "Passing %{title} Test"
       question_count: "Question № %{index} from %{total}"
       submit: "Next"
+      invalid_questions: "Picked test has not questions."
+      invalid_answers: "One of the questions does not have answers"
       gist:
       success: "Gist was successfully created! Link: %{url}"
       failure: "An error occurred while saving gist"
@@ -95,6 +105,9 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+    feedback_mailer:
+    send_feedback:
+      subject: "A new feedback received from Test-Guru"  
   gist_question_service:
     description: "A question about %{test_title} from TestGuru"
     success: "Gist was successfully created! Link: %{url}"

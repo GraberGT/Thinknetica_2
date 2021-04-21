@@ -52,7 +52,8 @@ ru:
       questions_count: "Кол-во вопросов"
       actions: "Действия"
     test:
-      start: "Начать" 
+      start:
+      empty: "У данного теста нет вопросов."
   test_passages:
     result:
       header: "Тест %{title} успешно завершён!"
@@ -64,6 +65,8 @@ ru:
       header: "Вы проходите тест: %{title}."
       question_count: "Вопрос № %{index} из %{total}"
       submit: "Следующий" 
+      invalid_questions: "У данного теста отсутсвуют вопросы"
+      invalid_answers: "Один из вопросов не имеет ответов"
       gist:
       success: "Gist успешно создан! Ссылка: %{url}"
       failure: "Во время сохранения gist произошла ошибка" 
@@ -90,6 +93,13 @@ ru:
         question: "Вопрос"
         gist_url: "Ссылка на gist"
         user: "Пользователь"
+    feedbacks:
+      new:
+        header: "Отправить отзыв"
+        message: "Сообщение"
+      create:
+        success: "Отзыв успешно отправлен!"
+        failure: "Во время отправки отзыва произошла ошибка!"
   users:
     sessions:
       create: 

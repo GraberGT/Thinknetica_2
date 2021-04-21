@@ -4,7 +4,13 @@ class TestPassagesController < ApplicationController
   
   
   def show
-    redirect_to result_test_passage_path(@test_passage) if @test_passage.completed?
+    if @test_passage.test.questions.blank?
+      redirect_to root_path, alert: t('.invalid_questions')
+    end
+
+    if @test_passage.current_question.answers.blank?
+      redirect_to root_path, alert: t('.invalid_answers')
+    end
   end
 
   def result

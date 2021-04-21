@@ -12,9 +12,18 @@ validates :level, numericality: { only_integer: true, :greater_than_or_equal_to 
 scope :easy, -> { where(level: 0..1) }
 scope :medium, -> { where(level: 2..4) }
 scope :hard, -> { where(level: 5..Float::INFINITY) }
+scope :published, -> { where(complete: true) }
 scope :by_category, -> (category) { joins(:category).where(categories: { title: category }) }
 
   def self.titles_by_category(category)
     Test.by_category(category).order(title: :desc).pluck(:title)
+  end
+  
+  def completed
+    if self.complete
+      I18n.t('helpers.yeap')
+    else
+      I18n.t('helpers.nope')
+    end
   end
 end

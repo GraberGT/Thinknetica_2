@@ -3,6 +3,7 @@
   <td><%= test_level(test) %></td>
   <td><%= test_category(test) %></td>
   <td><%= test.questions.count %></td>
+  <td><%= test.completed  %></td>
   <td><%= link_to t('links.show'), admin_test_path(test) %></td>
   <td><%= link_to t('links.edit'), edit_admin_test_path(test) %></td>
   <td>
