@@ -22,9 +22,9 @@ categories = Category.create(
 
 users = User.create(
   [
-    { name: "John", email: "gates@gmail.com" },
-    { name: "Bill", email: "packard@gmail.com" },
-    { name: "Steve", email: "work@gmail.com" }
+    { first_name: "John", email: "gates@gmail.com" },
+    { first_name: "Bill", email: "packard@gmail.com" },
+    { first_name: "Steve", email: "work@gmail.com" }
   ]
 )
 
@@ -47,9 +47,7 @@ questions = Question.create(
 
 answers = Answer.create(
   [
-    {title: 'correct', question: questions[0], right_answer: true},
-    {title: 'incorrect', question: questions[0], right_answer: false} 
+    {title: 'correct', question: questions[0], correct: true},
+    {title: 'incorrect', question: questions[0], correct: false} 
   ]
 )
-
-10.times { TestHistory.create(user_id: users.sample.id, test_id: tests.sample.id, passed: [true, false].sample) }
