@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :switch_locale
+  before_action :configure_sign_up_params, only: [:create]
 
   def default_url_options
     I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
 
   def switch_locale
     I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
+  end
+
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end
 end
