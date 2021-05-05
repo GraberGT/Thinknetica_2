@@ -52,7 +52,7 @@ ru:
       questions_count: "Кол-во вопросов"
       actions: "Действия"
     test:
-      start:
+      start: "Начать тест"
       empty: "У данного теста нет вопросов."
   test_passages:
     result:
@@ -65,6 +65,7 @@ ru:
       header: "Вы проходите тест: %{title}."
       question_count: "Вопрос № %{index} из %{total}"
       submit: "Следующий" 
+      next: "Следующий"
       invalid_questions: "У данного теста отсутсвуют вопросы"
       invalid_answers: "Один из вопросов не имеет ответов"
       gist:

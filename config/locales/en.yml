@@ -57,7 +57,7 @@ en:
       questions_count: "Questions count"
       actions: "Actions"
     test:
-      start:
+      start: "Start test"
       empty: "Test does not have any questions."
   test_passages:
     result:
