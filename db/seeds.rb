@@ -11,6 +11,7 @@ Category.destroy_all
 Question.destroy_all
 Answer.destroy_all
 User.destroy_all
+Admin.destroy_all
 
 categories = Category.create(
   [
