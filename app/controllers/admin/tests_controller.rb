@@ -50,14 +50,6 @@ class Admin::TestsController < Admin::BaseController
     end
   end
 
-  def update_publish
-    if @test.update(complete: true)
-      redirect_to admin_tests_path
-    else
-      render :index
-    end
-  end
-
   private
 
   def find_test
