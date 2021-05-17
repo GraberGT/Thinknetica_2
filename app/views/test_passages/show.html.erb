@@ -1,0 +1,25 @@
+<h1> <%= t('.header', title: @test_passage.test.title) %> test</h1>
+
+<p><b><%= @test_passage.current_question.title %></b></p>
+
+<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :title, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids#{b.object.id}", class: "checkBox" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+  <p><%= t('.result') %>: <%= @test_passage.question_index %> / <%= @test_passage.test.questions.count %></p>
+
+  <div class="result">
+    <div class="result-bar" role="resultbar" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+
+  <p><%= link_to t('.gist'), gist_test_passage_path(@test_passage), method: :post %></p>
+  <p><%= form.submit t('.next'), class: "btn btn-primary next",
+                                 data: { 
+                                 result: result(@test_passage) }, 
+                                 disabled: true %>
+                                  
+  </p>
+<% end %>

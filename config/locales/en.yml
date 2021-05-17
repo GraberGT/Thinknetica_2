@@ -1,0 +1,115 @@
+en:
+  links:
+    back: "Back"
+    edit: "Edit"
+    main: "Main"
+    show: "Show"
+    delete: "Delete"
+    confirm: "Are you sure?"
+    logout: "Log out"
+    signup: "Sing up"
+    login: "Log in"
+    gist: "Save question to Gist"
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      user:
+        password: "Password"
+        remember_me: "Remember me"
+        first_name: "First name"
+        last_name: "Last name"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+      feedbacks:
+        new:
+          header: "Send feedback"
+          message: "Message"
+        create:
+          success: "feedback was successfully saved!"
+          failure: "An error occured while saving your feedback!"
+    nav:
+      brand : "TestGuru"
+      welcome: "Welcome, %{user} Guru"
+    footer:
+      created_by: "Created by"
+      project_description: "Beautiful solition for online testing"
+      online_school: "Study project at online school Thinknetica"
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      category_id: "Category"
+      questions_count: "Questions count"
+      actions: "Actions"
+    test:
+      start: "Start test"
+      empty: "Test does not have any questions."
+  test_passages:
+    result:
+      header: "The %{title} Test was Completed!"
+      pass: "Test was successfully passed"
+      fail: "You didn't pass the test"
+      correct_questions: "Number of correct answered questions"
+      rate: "Your rate is"
+    show:
+      header: "Passing %{title} Test"
+      question_count: "Question № %{index} from %{total}"
+      submit: "Next"
+      invalid_questions: "Picked test has not questions."
+      invalid_answers: "One of the questions does not have answers"
+      gist:
+      success: "Gist was successfully created! Link: %{url}"
+      failure: "An error occurred while saving gist"
+  admin:
+    base:
+      not_auth: "You are not authorized to view this page."
+    nav:
+      header: "TestGuru Admin Panel"
+      welcome: "Welcome %{user} Guru"
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Tricky tests"
+        new_test: "New test"
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+        questions_count: "Questions count"
+        actions: "Actions"
+    gists:
+      index:
+        header: "Questions at gist"
+        question: "Question"
+        gist_url: "Link to gist"
+        user: "User"
+  users:
+    sessions:
+      create: 
+        welcome: "Hello! Glad to welcome you here!"
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+    feedback_mailer:
+    send_feedback:
+      subject: "A new feedback received from Test-Guru"  
+  gist_question_service:
+    description: "A question about %{test_title} from TestGuru"
+    success: "Gist was successfully created! Link: %{url}"
+    failure: "An error occurred while saving gist"
+    not_saved: "Didn't save to DB"
