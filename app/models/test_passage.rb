@@ -5,8 +5,7 @@ class TestPassage < ApplicationRecord
   belongs_to :test, dependent: :destroy
   belongs_to :current_question, class_name: "Question", optional: true, dependent: :destroy
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_update :before_update_set_next_question
+  before_validation :before_validate_set_current_question
 
   def completed?
     current_question.nil?
@@ -32,14 +31,22 @@ class TestPassage < ApplicationRecord
     rate >= PASS_RATE
   end
 
-  private
-
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
+  def failed?
+    !passed?
   end
 
-  def before_update_set_next_question
-    self.current_question = next_question
+  private
+
+  def remaining
+    if self.current_question.nil?
+      test.questions.order(:id)
+    else
+      test.questions.order(:id).where('id > ?', current_question.id)
+    end
+  end
+
+  def before_validate_set_current_question
+    self.current_question = remaining.first
   end
 
   def correct_answer?(answer_ids)
