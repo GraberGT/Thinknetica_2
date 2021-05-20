@@ -29,6 +29,17 @@ ru:
         last_name: "Фамилия"
         password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
+    badges_helper:
+      message:
+        one: "Вы получили один Бэйдж!"
+        few: "Вы получили %{count} Бэйджа!"
+        many: "Вы получили %{count} Бэйджов!"
+        other: "Вы получили %{count} Бэйджа!"
+  users:
+    show:
+      header: "Личная страничка"
+      email: "Почта: "
+      badges: "Бэйджи: "
   shared:
     errors:
       header:
@@ -77,9 +88,41 @@ ru:
     nav:
       header: "Панель администратора TestGuru"
       welcome: "Добро пожаловать, %{user} Гуру"
+    new_badge: "Создать Бэйдж"
+      badges: "Все Бэйджи"
+      gists: "Список Гистов"
+    badges:
+      index:
+        header: "Список Бэйджов"
+        title: "Название"
+        octicon: "Иконка"
+        color: "Цвет"
+        look: "Вид"
+        actions: "Действия"
+      new:
+        header: "Создать Бэйдж"
+      edit:
+        header: "Изменить Бэйдж"
+      create:
+        success: "Бэйдж успешно создан!"
+        failure: "Во время сохранения Бэйджа произошла ошибка!"
+      badge:
+        delete_message: "Вы уверены что хотите удалить данный Бэйдж?"
+      form:
+        title: "Название"
+        octicon: "Иконка"
+        get_octicon: "Здесь можно выбрать иконку"
+        color: "Цвет иконки"
+        rule: "Правило"
+        all: "Прохождение всех тестов"
+        categories: "Прохождение всех тестов в категории"
+        tests: "Прохождение теста с первой попытки"
+        levels: "Прохождение всех тестов с уровнем"
     tests:
       create:
         success: "Тест успешно создан."
+      edit:
+        header: "Редактировать тест"
       index:
         header: "Доступные тесты"
         new_test: "Новый тест"
