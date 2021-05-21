@@ -6,57 +6,57 @@ document.addEventListener('turbolinks:load', function() {
   }
 })
 
-function ruleValueSelectorChange() {
-  if (this.value == "first_try") {
+switch (ruleValueSelectorChange) {
+  case (this.value == "first_try"): {
     labelShow(".tests", ".categories", ".levels", ".all")
     valueShow(".rule_tests", ".rule_categories", ".rule_levels")
     setName(".rule_tests", ".rule_categories", ".rule_levels")
 
-  } else if (this.value == "all_by_category") {
+  } case (this.value == "all_by_category"): {
     labelShow(".categories", ".levels", ".tests", ".all")
     valueShow(".rule_categories", ".rule_tests", ".rule_levels")
     setName(".rule_categories", ".rule_tests", ".rule_levels")
 
-  } else if (this.value == "all_by_level") {
+  } case (this.value == "all_by_level"): {
     labelShow(".levels", ".tests", ".categories", ".all")
     valueShow(".rule_levels", ".rule_categories", ".rule_tests")
     setName(".rule_levels", ".rule_categories", ".rule_tests")
 
-  } else {
+  } default: {
     labelShow(".tests", ".categories", ".levels", ".all", e=true)
     valueShow(".rule_levels", ".rule_categories", ".rule_tests", e=true)
     setName(".rule_levels", ".rule_categories", ".rule_tests", e=true)
   }
 }
 
-function valueShow(c0, c1, c2, e=false) {
+function valueShow(value_0, value_1, value_2, e=false) {
   if (e) {
-    document.querySelector(c0).classList.add("hide")
+    document.querySelector(value_0).classList.add("hide")
   } else {
-    document.querySelector(c0).classList.remove("hide") 
+    document.querySelector(value_0).classList.remove("hide") 
   }
-  document.querySelector(c1).classList.add("hide")
-  document.querySelector(c2).classList.add("hide")
+  document.querySelector(value_1).classList.add("hide")
+  document.querySelector(value_2).classList.add("hide")
 }
 
-function setName(c0, c1, c2, e=false) {
+function setName(value_0, value_1, value_2, e=false) {
   if (e) {
-    document.querySelector(c0).setAttribute("name", "badge[nothing]")
+    document.querySelector(value_0).setAttribute("name", "badge[nothing]")
   } else {
-    document.querySelector(c0).setAttribute("name", "badge[rule_value]")
+    document.querySelector(value_0).setAttribute("name", "badge[rule_value]")
   }
-  document.querySelector(c1).setAttribute("name", "badge[nothing]")
-  document.querySelector(c2).setAttribute("name", "badge[nothing]")
+  document.querySelector(value_1).setAttribute("name", "badge[nothing]")
+  document.querySelector(value_2).setAttribute("name", "badge[nothing]")
 
 }
 
-function labelShow(c1, c2, c3, c4, e=false) {
+function labelShow(value_1, value_2, value_3, value_4, e=false) {
   if (e) {
-    document.querySelector(c1).classList.add("hide")
+    document.querySelector(value_1).classList.add("hide")
   } else {
-    document.querySelector(c1).classList.remove("hide") 
+    document.querySelector(value_1).classList.remove("hide") 
   }
-  document.querySelector(c2).classList.add("hide")
-  document.querySelector(c3).classList.add("hide")
-  document.querySelector(c4).classList.add("hide")
+  document.querySelector(value_2).classList.add("hide")
+  document.querySelector(value_3).classList.add("hide")
+  document.querySelector(value_4).classList.add("hide")
 }

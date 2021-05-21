@@ -16,6 +16,8 @@ class BadgeService
     end
   end
 
+  private
+
   def honored?(badge)
     send "check_#{badge.rule}", badge.rule_value
   end

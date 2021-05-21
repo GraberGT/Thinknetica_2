@@ -7,7 +7,7 @@ class Badge < ApplicationRecord
 
   validates :rule, presence :true, uniqueness: { scope: :rule_value }
 
-  validates :validate_rule_value
+  validate :validate_rule_value
 
   def self.octicons
     %w(file-code flame heart mortar-board pulse rocket ruby)
