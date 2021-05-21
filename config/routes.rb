@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :badges,   only: :show
+
   namespace :admin do
     resources :badges
 
@@ -30,7 +32,6 @@ Rails.application.routes.draw do
   end
 
   resource :feedbacks, only: %i[new create]
-  get "user", to: "users#show"
 end
 
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

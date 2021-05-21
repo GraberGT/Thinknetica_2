@@ -88,7 +88,7 @@ ru:
     nav:
       header: "Панель администратора TestGuru"
       welcome: "Добро пожаловать, %{user} Гуру"
-    new_badge: "Создать Бэйдж"
+      new_badge: "Создать Бэйдж"
       badges: "Все Бэйджи"
       gists: "Список Гистов"
     badges:

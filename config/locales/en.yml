@@ -105,7 +105,7 @@ en:
         success: "Badge was successfully created!"
         failure: "An error occured while creating Badge!"
     badge:
-        delete_message: "Are you sure?"
+      delete_message: "Are you sure?"
       form:
         title: "Title"
         octicon: "Icon"
