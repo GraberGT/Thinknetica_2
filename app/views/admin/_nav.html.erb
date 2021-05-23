@@ -2,7 +2,7 @@
   <%= link_to t('.header'), admin_root_path, class: 'navbar-brand text-white' %>
 
   <span class="navbar-text text-white">
-    <%= t('.welcome', user: current_user.email, user_path) %> |
+    <%= t('.welcome', user: current_user.email) %> |
     <%= link_to t('links.logout'), destroy_user_session_path, method: :delete, class: 'text-white' %>
   </span>
 </nav>
