@@ -35,6 +35,18 @@ class TestPassage < ApplicationRecord
     !passed?
   end
 
+  def finished!
+    update(finished: true)
+  end
+
+  def time_left
+    (end_time - Time.current).to_i
+  end
+
+  def in_time?
+    test.time_to_pass.zero? || time_left >= 0
+  end
+
   private
 
   def remaining
@@ -59,5 +71,9 @@ class TestPassage < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def end_time
+    created_at + test.time_to_pass * 60
   end
 end

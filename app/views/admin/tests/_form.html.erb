@@ -16,6 +16,14 @@
               <%= form.number_field :level, id: :test_level, class: "form-control"  %>
             </p>
 
+            <tr>
+              <td><%= form.label :time_to_pass %></td>
+            </tr>
+            
+            <tr>
+              <td><%= form.select :time_to_pass, Test::TIME_TO_PASS %></td>
+            </tr>
+
             <p>
               <%= form.label :category_id %>
               <%= form.collection_select :category_id, Category.all, 

@@ -21,6 +21,7 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
+        time_to_pass: "Время прохождения"
         category_id: "Категория"
       user:
         password: "Пароль"
