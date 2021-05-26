@@ -29,6 +29,11 @@ en:
         last_name: "Last name"
         password_confirmation: "Password confirmation"
         current_password: "Current password"
+  users:
+    show:
+      header: "Personal page"
+      email: "Email: "
+      badges: "Badges: "
   shared:
     errors:
       header:
@@ -42,7 +47,7 @@ en:
           success: "feedback was successfully saved!"
           failure: "An error occured while saving your feedback!"
     nav:
-      brand : "TestGuru"
+      brand: "TestGuru"
       welcome: "Welcome, %{user} Guru"
     footer:
       created_by: "Created by"
@@ -72,7 +77,7 @@ en:
       submit: "Next"
       invalid_questions: "Picked test has not questions."
       invalid_answers: "One of the questions does not have answers"
-      gist:
+    gist:
       success: "Gist was successfully created! Link: %{url}"
       failure: "An error occurred while saving gist"
   admin:
@@ -81,6 +86,36 @@ en:
     nav:
       header: "TestGuru Admin Panel"
       welcome: "Welcome %{user} Guru"
+      new_badge: "Create Badge"
+      badges: "All Badges"
+      gists: "All Gists"
+    badges:
+      index:
+        header: "Badges list"
+        title: "Title"
+        octicon: "Icon"
+        color: "Color"
+        look: "View"
+        actions: "Actions"
+      new:
+        header: "Create Badge"
+      edit:
+        header: "Edit Badge"
+      create:
+        success: "Badge was successfully created!"
+        failure: "An error occured while creating Badge!"
+    badge:
+      delete_message: "Are you sure?"
+      form:
+        title: "Title"
+        octicon: "Icon"
+        color: "Color"
+        get_octicon: "Check out all icons here"
+        rule: "Rule"
+        all: "All tests passed"
+        categories: "All tests passed by category: "
+        tests: "Passing a test from the first try"
+        levels: "Passing all tests with level: "
     tests:
       create:
         success: "Test was successfully created."
@@ -98,6 +133,8 @@ en:
         question: "Question"
         gist_url: "Link to gist"
         user: "User"
+      update:
+        new_badges: "You earned new Badge!"
   users:
     sessions:
       create: 

@@ -9,9 +9,12 @@ validates :title, :level, presence: true
 validates :title, uniqueness: { scope: :level }
 validates :level, numericality: { only_integer: true, :greater_than_or_equal_to => 0 }
 
+scope :passed, ->(user_id) { joins(:test_passages).
+  where('test_passages.passed = ? AND test_passages.user_id = ?', true, user_id) }
+
 scope :easy, -> { where(level: 0..1) }
 scope :medium, -> { where(level: 2..4) }
-scope :hard, -> { where(level: 5..Float::INFINITY) }
+scope :hard, -> { where(level: 5..10) }
 scope :published, -> { where(complete: true) }
 scope :by_category, -> (category) { joins(:category).where(categories: { title: category }) }
 

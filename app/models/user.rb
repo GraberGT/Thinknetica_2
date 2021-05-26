@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: "Test", foreign_key: "author_id",
   dependent: :nullify
+  has_and_belongs_to_many :badges
 
   validates :first_name, :last_name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, 

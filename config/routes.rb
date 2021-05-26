@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :badges,   only: :show
+
   namespace :admin do
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
 
